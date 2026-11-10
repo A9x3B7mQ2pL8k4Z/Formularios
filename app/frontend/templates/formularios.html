@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portal de formularios</title>
+    <link rel="icon" href="/static/img/volvo-favicon.png">
+    <link rel="stylesheet" href="/static/css/formularios.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body{% if fondo_formularios_url %} style="--image-background:url({{ fondo_formularios_url | tojson | forceescape }})"{% endif %}>
+    <!-- El id del formulario lo entrega el servidor (viene del token del QR) -->
+    <main id="app" data-id-formulario="{{ id_formulario }}"></main>
+    <noscript>Necesitas activar JavaScript para responder este formulario.</noscript>
+
+    <!-- El orden importa: cada archivo usa lo que definen los anteriores -->
+    <script src="/static/js/validadores.js"></script>
+    <script src="/static/js/constructor.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/app-formulario.js"></script>
+</body>
+</html>

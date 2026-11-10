@@ -1,0 +1,6 @@
+Flask>=3.0,<4.0
+requests>=2.31
+python-dotenv>=1.0
+tzdata>=2024.1
+Pillow>=10.0
+PyMuPDF>=1.26,<2.0

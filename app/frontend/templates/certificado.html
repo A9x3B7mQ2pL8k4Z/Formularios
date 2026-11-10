@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Certificado Academia Volvo {{ id_certificado }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; font-size: 10pt; color: #161616; line-height: 1.4; }
+        .marca { text-align: right; font-family: Georgia, serif; font-weight: bold; font-size: 17pt; margin-bottom: 40pt; }
+        h1 { font-size: 12pt; color: #2d5155; margin: 0 0 24pt; }
+        .fecha { text-align: right; margin-bottom: 26pt; }
+        .empresa { margin-bottom: 34pt; }
+        .cuerpo { text-align: justify; }
+        .cuerpo p { margin-bottom: 18pt; }
+        .firma { text-align: center; margin-top: 40pt; }
+        .referencia { font-size: 8pt; color: #555; text-align: center; margin-top: 32pt; }
+    </style>
+</head>
+<body>
+    <div class="marca">V O L V O</div>
+    <h1>CERTIFICADO ACADEMIA VOLVO {{ id_certificado }}</h1>
+    <p class="fecha">{{ fecha_larga }}</p>
+    <div class="empresa">
+        <p>Señores:</p>
+        <p>{{ registro.razon_social }}, RUT {{ registro.rut_razon_social }}</p>
+    </div>
+    <div class="cuerpo">
+        <p>VOLVO CHILE SPA certifica que <strong>{{ registro.nombre_conductor }}</strong>,
+        RUT <strong>{{ registro.rut_conductor }}</strong>, aprobó con <strong>100 puntos</strong>
+        la capacitación teórica denominada <strong>{{ titulo }}</strong>, para la operación
+        del camión marca Volvo, modelo <strong>{{ registro.modelo }}</strong>, potencia
+        <strong>{{ registro.potencia }}</strong>, tracción <strong>{{ registro.traccion }}</strong>
+        y año comercial <strong>{{ registro.anio_comercial }}</strong>, realizada en formato
+        online el día <strong>{{ registro.fecha_atencion }}</strong>.</p>
+        <p>Se extiende el presente certificado, con una vigencia de 24 meses, para los fines
+        que nuestro cliente estime conveniente.</p>
+    </div>
+    <div class="firma">VOLVO CHILE SPA<br>RUT 76284920-8</div>
+    <p class="referencia">Referencia de respuesta: {{ respuesta }}</p>
+</body>
+</html>
